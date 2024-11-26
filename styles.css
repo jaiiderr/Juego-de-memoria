@@ -213,3 +213,49 @@ body {
 .modal-content button:hover {
     background-color: #45a049;
 }
+
+@media (max-width: 768px) {
+    .board{
+        grid-template-columns: repeat(4, 40px); 
+        grid-template-rows: repeat(4, 40px);
+    }
+    .game-container{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .scoreboard{
+        width: 80%;
+        height: 40%;
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    .scoreboard p,h2,h3{
+        padding: 2px;
+    }
+
+    .modal-content{
+        width: 80%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1240px) {
+    .board{
+        grid-template-columns: repeat(4, 70px); 
+        grid-template-rows: repeat(4, 70px);
+    }
+
+    .scoreboard{
+        width: 40%;
+        height: 40%;
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+    .scoreboard p,h2,h3{
+        padding: 5px;
+    }
+
+}
