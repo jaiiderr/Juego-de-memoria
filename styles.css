@@ -19,6 +19,7 @@ body {
     background-repeat: no-repeat; 
 }
 
+
 .game-container {
 
     background-image: url('https://imgs.search.brave.com/MYIiD_kkkB1yt8P31eY78weXYhwuiqqJVyow0XZYQCY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzJhL2Uy/L2NmLzJhZTJjZjY5/N2U3YmE5Zjg3OGE4/OGZjZGY4MGJiMDQx/LmpwZw'); 
@@ -30,7 +31,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 85%;
+    width: 80%;
     height: 90vh;
     border-radius: 8px;
 }
@@ -216,8 +217,8 @@ body {
 
 @media (max-width: 768px) {
     .board{
-        grid-template-columns: repeat(4, 40px); 
-        grid-template-rows: repeat(4, 40px);
+        grid-template-columns: repeat(4, 50px); 
+        grid-template-rows: repeat(4, 50px);
     }
     .game-container{
         display: flex;
