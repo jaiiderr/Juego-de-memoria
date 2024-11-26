@@ -7,6 +7,7 @@ let attempts = num;
 let matchedPairs = 0;
 let flippedCards = []; 
 const matchedFruits = []; 
+document.getElementById('attempts').textContent = attempts;
 
 // Barajar las cartas aleatoriamente
 function shuffle(array) {
