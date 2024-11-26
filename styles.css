@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+
+    background-image: url('https://imgs.search.brave.com/BwMVvkNUuNpvTPbdJgdKiYOXGo8KVRnS4-YrqrFtkeY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtcHJlbWl1/bS92aWVqby1yZXN1/bWVuLW1hZGVyYS10/ZXh0dXJhLXJ1c3Rp/Y2EtdmVuZGltaWEt/cGFwZWwtcGludGFk/b184MDc0My05MjYu/anBnP3NlbXQ9YWlz/X2h5YnJpZA'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+.game-container {
+
+    background-image: url('https://imgs.search.brave.com/MYIiD_kkkB1yt8P31eY78weXYhwuiqqJVyow0XZYQCY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzJhL2Uy/L2NmLzJhZTJjZjY5/N2U3YmE5Zjg3OGE4/OGZjZGY4MGJiMDQx/LmpwZw'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 85%;
+    height: 90vh;
+    border-radius: 8px;
+}
+
+.board {
+    background-image: url('https://imgs.search.brave.com/BwMVvkNUuNpvTPbdJgdKiYOXGo8KVRnS4-YrqrFtkeY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtcHJlbWl1/bS92aWVqby1yZXN1/bWVuLW1hZGVyYS10/ZXh0dXJhLXJ1c3Rp/Y2EtdmVuZGltaWEt/cGFwZWwtcGludGFk/b184MDc0My05MjYu/anBnP3NlbXQ9YWlz/X2h5YnJpZA'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+
+    display: grid;
+    grid-template-columns: repeat(4, 100px); 
+    grid-template-rows: repeat(4, 100px);
+    gap: 10px;
+    height: fit-content;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+
+
+.card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    perspective: 1000px;
+
+    background-image: url('https://imgs.search.brave.com/BwMVvkNUuNpvTPbdJgdKiYOXGo8KVRnS4-YrqrFtkeY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtcHJlbWl1/bS92aWVqby1yZXN1/bWVuLW1hZGVyYS10/ZXh0dXJhLXJ1c3Rp/Y2EtdmVuZGltaWEt/cGFwZWwtcGludGFk/b184MDc0My05MjYu/anBnP3NlbXQ9YWlz/X2h5YnJpZA'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+.card .front, .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.card .front {
+    background-image: url('https://img.freepik.com/fotos-premium/textura-madera-transparente-alta-resolucion_700339-278.jpg?semt=ais_hybrid'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+
+    border-radius: 8px;
+    transform: rotateY(0deg);
+    transition: transform 0.5s;
+}
+
+.card .back {
+    background-image: url('https://th.bing.com/th/id/R.08c507435714d622a288020cf4109482?rik=nSi%2b7vhVUUhqEg&pid=ImgRaw&r=0');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+
+    transform: rotateY(180deg);
+    transition: transform 0.5s;
+    border-radius: 8px;
+}
+
+.card.flipped .front {
+    transform: rotateY(180deg);
+}
+
+.card.flipped .back {
+    transform: rotateY(0deg);
+}
+
+@keyframes levitate {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-30px) scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-60px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+.card.matched {
+    animation: levitate 1s forwards;
+    pointer-events: none;
+}
+
+/* Puntajes e informacion */
+
+.scoreboard{
+    background-image: url('https://imgs.search.brave.com/BwMVvkNUuNpvTPbdJgdKiYOXGo8KVRnS4-YrqrFtkeY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtcHJlbWl1/bS92aWVqby1yZXN1/bWVuLW1hZGVyYS10/ZXh0dXJhLXJ1c3Rp/Y2EtdmVuZGltaWEt/cGFwZWwtcGludGFk/b184MDc0My05MjYu/anBnP3NlbXQ9YWlz/X2h5YnJpZA'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+
+    height: 50%;
+    width: 20%;
+    border-radius: 8px;
+    color: whitesmoke;
+}
+
+.scoreboard p,h2,h3{
+    padding: 10px;
+}
+.scoreboard ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.scoreboard span {
+    font-size: 1.2rem;
+    margin: 10px;
+}
+
+/* modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: none; 
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal-content {
+    background-image: url('https://imgs.search.brave.com/BwMVvkNUuNpvTPbdJgdKiYOXGo8KVRnS4-YrqrFtkeY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtcHJlbWl1/bS92aWVqby1yZXN1/bWVuLW1hZGVyYS10/ZXh0dXJhLXJ1c3Rp/Y2EtdmVuZGltaWEt/cGFwZWwtcGludGFk/b184MDc0My05MjYu/anBnP3NlbXQ9YWlz/X2h5YnJpZA'); /* Ruta de la imagen */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    color: whitesmoke;
+
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Cuando gana */
+.modal-green {
+    background-color: rgba(40, 167, 69, 0.7); 
+}
+
+/* Cuando se pierde */
+.modal-red {
+    background-color: rgba(189, 14, 5, 0.7); 
+}
+
+/* Boton reiniciar */
+.modal-content button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.modal-content button:hover {
+    background-color: #45a049;
+}
